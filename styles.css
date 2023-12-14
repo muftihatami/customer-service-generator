@@ -1,0 +1,143 @@
+body {
+    min-width: 100%;
+    margin: 0;
+}
+.mainbody{
+    width: 100%;
+}
+
+p {
+    font-family: monospace;
+}
+
+.column {
+    float: left;
+    left: 0;
+    width: 40%;
+    height: 100vh;
+    padding: 15px;
+    padding-top: 50px;
+    background-color: mediumseagreen;
+  }
+  
+  .row{
+    left: 0;
+  }
+  
+  /* Clear floats after the columns */
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.support-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: mediumseagreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Checkbox yang tidak terlihat */
+  .support-checkbox {
+    display: none;
+  }
+
+  /* Style untuk popover */
+  .popover {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 40px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .popover p {
+    margin-bottom: 10px;
+  }
+
+  .popover a {
+    color: mediumseagreen;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #aaa;
+  }
+
+  /* Munculkan popover saat checkbox dicentang */
+  .support-checkbox:checked ~ .popover {
+    display: block;
+  }
+
+  nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+    transition: all 0.4s ease;
+    background-color: white;
+  }
+  nav.sticky{
+    padding: 15px 20px;
+    background: mediumseagreen;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  nav .nav-content{
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .logo a{
+    font-weight: 500;
+    font-size: 35px;
+    color: mediumseagreen;
+  }
+  nav.sticky .logo a{
+    color: #fff;
+  }
+  .nav-content .nav-links{
+    display: flex;
+  }
+  .nav-content .nav-links li{
+    list-style: none;
+    margin: 0 8px;
+  }
+   .nav-links li a{
+    text-decoration: none;
+    color: #0E2431;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 4px;
+    transition: all 0.3s ease;
+  }
+   .nav-links li a:hover{
+     color: #4070f4;
+   }
+   nav.sticky .nav-links li a{
+     color: #fff;
+     transition: all 0.4s ease;
+  }
+   nav.sticky .nav-links li a:hover{
+    color: #0E2431;
+  }

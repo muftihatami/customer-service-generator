@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Button Design</title>
+    <style>
+        /* CSS untuk tombol dan popover */
+        #customButton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #customPopover {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        #customPopover p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="buttonText" placeholder="Button Text">
+    <input type="color" id="buttonColor" value="#ff0000">
+    <input type="text" id="popoverText" placeholder="Popover Text">
+    <button onclick="updateButton()">Update Button</button>
+
+    <button id="customButton">Custom Button</button>
+
+    <div id="customPopover" class="popover">
+        <p id="popoverContent">Default Popover Text</p>
+    </div>
+
+    <script>
+        // Update warna latar belakang tombol
+        function updateButtonColor() {
+            const customButton = document.querySelector('#customButton');
+            const buttonColor = document.querySelector('#buttonColor').value;
+            customButton.style.backgroundColor = buttonColor;
+        }
+
+        // Update teks tombol
+        function updateButtonText() {
+            const customButton = document.querySelector('#customButton');
+            const buttonText = document.querySelector('#buttonText').value;
+            customButton.textContent = buttonText;
+        }
+
+        // Update teks pada popover
+        function updatePopoverText() {
+            const popoverContent = document.querySelector('#popoverContent');
+            const popoverText = document.querySelector('#popoverText').value;
+            popoverContent.textContent = popoverText;
+        }
+
+        // Panggil fungsi update saat tombol ditekan
+        function updateButton() {
+            updateButtonColor();
+            updateButtonText();
+            updatePopoverText();
+        }
+    </script>
+</body>
+</html>
